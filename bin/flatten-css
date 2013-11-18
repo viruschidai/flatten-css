@@ -1,0 +1,28 @@
+#!/usr/bin/env node
+var path = require('path');
+var fs = require('fs');
+var lib = path.join(path.dirname(fs.realpathSync(__filename)), '../lib');
+var flattenCss = require(lib + '/index.js');
+
+var argv = process.argv 
+
+if (argv.length < 3) {
+  console.log('Usage: flattenCss srcFile [destFile]\n');
+} else {
+  var srcFile = argv[2]
+  if(!fs.existsSync(srcFile)) {
+    return console.log('Please specify a src css file!\n');
+  }
+  currentDir = path.resolve(process.cwd());
+
+  srcFileBasename = path.basename(srcFile, '.css');
+  destFile = argv.length > 4 ? argv[3] : srcFileBasename + '-flattened.css';
+  destFilePath = path.join(currentDir, destFile); 
+  var css = fs.readFileSync(srcFile, 'utf-8');
+
+  console.log('Flatten css ...');
+  var flattenedCss = flattenCss(css, '  ');
+  
+  console.log('Writing to ' + destFilePath);
+  fs.writeFileSync(destFilePath, flattenedCss, 'utf-8');
+}

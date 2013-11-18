@@ -1,0 +1,11 @@
+.c, .d {
+  width: 100px;
+}
+/* Some comment */
+.c, .d {
+  background-color: #fff;
+}
+
+.a {
+  width: 200px;
+}

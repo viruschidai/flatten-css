@@ -1,0 +1,41 @@
+{
+  "name": "flatten-css",
+  "version": "0.1.0",
+  "description": "flatten css for easy comparison",
+  "author": "Bill Gao <viruschidai@gmail.com>",
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/viruschidai/flatten-css.git"
+  },
+  "main": "./index",
+  "bin": {
+    "flatten-css": "./bin/flatten-css"
+  },
+  "engines": {
+    "node": ">= 0.10.x"
+  },
+  "scripts": {
+    "prepublish": "coffee --output lib --compile src",
+    "test": "mocha --compilers coffee:coffee-script --recursive test/"
+  },
+  "dependencies": {
+    "css-parse": "1.6.*",
+    "underscore": "1.5.*"
+  },
+  "devDependencies": {
+    "coffee-script": "1.6.*",
+    "mocha": "1.14.*"
+  },
+  "bugs": {
+    "url": "https://github.com/viruschidai/flatten-css/issues"
+  },
+  "directories": {
+    "test": "test"
+  },
+  "keywords": [
+    "flatten",
+    "compare css",
+    "css"
+  ],
+  "license": "MIT"
+}
