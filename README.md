@@ -25,6 +25,36 @@ flattened css:
   color: #888;
 }
 ```
+
+The following two blocks of css are same after flatten
+### css1
+```css
+.a, .b{
+  width: 100px;
+}
+
+.a, .b{
+  background-color: #eee;
+}
+```
+### css2
+```css
+.b, .a {
+  background-color: #eee;
+  width: 100px;
+}
+```
+They both flattened as:
+```css
+.a {
+  background-color: #eee;
+  width: 100px;
+}
+.b {
+  background-color: #eee;
+  width: 100px;
+}
+```
 ## Get started
   Install it by calling
 ```bash
