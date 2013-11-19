@@ -13,10 +13,11 @@ if (argv.length < 3) {
   if(!fs.existsSync(srcFile)) {
     return console.log('Please specify a src css file!\n');
   }
+
   currentDir = path.resolve(process.cwd());
 
   srcFileBasename = path.basename(srcFile, '.css');
-  destFile = argv.length > 4 ? argv[3] : srcFileBasename + '-flattened.css';
+  destFile = argv.length > 3 ? argv[3] : srcFileBasename + '-flattened.css';
   destFilePath = path.join(currentDir, destFile); 
   var css = fs.readFileSync(srcFile, 'utf-8');
 

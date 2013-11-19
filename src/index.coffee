@@ -3,11 +3,6 @@ util = require 'util'
 parse = require 'css-parse'
 _ = require 'underscore'
 
-indentation = '  '
-
-log = (obj) ->
-  console.log util.inspect obj, {depth: 10}
-
 mergeDeclarations = (declarations1, declarations2) ->
   hash = {}
   for decl in declarations2
@@ -20,13 +15,6 @@ mergeDeclarations = (declarations1, declarations2) ->
 
   ret = ret.concat declarations2
   return _(ret).sortBy (decl) -> decl.property
-
-printRule = (rule, indentation) ->
-  console.log "\n#{rule.selector} {"
-  for decl in rule.declarations
-    console.log "#{indentation}#{decl.property}: #{decl.value};" 
-
-  console.log '};'
 
 generateRuleStr = (rule, indentation) ->
   ret = "#{rule.selector} {\n"
