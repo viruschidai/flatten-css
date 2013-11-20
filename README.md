@@ -1,4 +1,4 @@
-# flatten-css 
+# flatten-css [![Build Status](https://travis-ci.org/viruschidai/flatten-css.png?branch=master)](https://travis-ci.org/viruschidai/flatten-css)
 
   Flatten CSS file for easy comparison. For example, if you re-write your css in less, you might want to compare the generated css with your original one. 
 
