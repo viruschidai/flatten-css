@@ -7,7 +7,7 @@
     "type": "git",
     "url": "git://github.com/viruschidai/flatten-css.git"
   },
-  "main": "./index",
+  "main": "lib/index.js",
   "bin": {
     "flatten-css": "./bin/flatten-css"
   },
@@ -16,15 +16,15 @@
   },
   "scripts": {
     "prepublish": "coffee --output lib --compile src",
-    "test": "mocha --compilers coffee:coffee-script --recursive test/"
+    "test": "mocha --compilers coffee:coffee-script -R spec --recursive test/"
   },
   "dependencies": {
-    "css-parse": "1.6.*",
-    "underscore": "1.5.*"
+    "css-parse": "~1.6.0",
+    "underscore": "~1.5.0"
   },
   "devDependencies": {
-    "coffee-script": "1.6.*",
-    "mocha": "1.14.*"
+    "coffee-script": "~1.6.0",
+    "mocha": "~1.14.0"
   },
   "bugs": {
     "url": "https://github.com/viruschidai/flatten-css/issues"
